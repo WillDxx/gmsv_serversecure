@@ -151,10 +151,3 @@ jobs:
   steps:
   - download: current
     patterns: '**/*.dll'
-  - task: GitHubRelease@1
-    displayName: 'Publish GitHub release $(build.sourceBranchName)'
-    inputs:
-      gitHubConnection: 'GitHub danielga'
-      releaseNotesSource: inline
-      assets: '$(Pipeline.Workspace)/**/*.dll'
-      addChangeLog: false
